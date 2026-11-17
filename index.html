@@ -1248,7 +1248,7 @@ var cloud={}, local=(function(raw){
 var db=null, dbState='loading';
 var prog=cleanProg(lsJSON('ek.prog'));
 var ui={unit:{}, src:'', vocabMode:'card', writeMode:null, manageKind:'vocab', editId:null};
-var VERSION='v0.2_202611171759';
+var VERSION='v0.3_202611171802';
 var EDITION='web', WEB_URL='https://terryc1217-eng.github.io/english-workbook/', IS_WEB=(EDITION==='web');
 var view='home';
 
@@ -2651,6 +2651,8 @@ function initProgSync(d){
 /* ---------- settings: voices, sync, version ---------- */
 var CHANGELOG=[
   [VERSION, [
+    '進版到 v0.3。v0.3 的內容是 v0.2_202611171759 加入的文法重點、動詞三態、助動詞題目，以及自己加的素材改成疊加在內建素材上。']],
+  ['v0.2_202611171759', [
     '文法新增「文法重點」：六年級 10 個（含助動詞 can、will、should、must、may、do／does／did，動詞三態），三年級 4 個，都有例句和錄音，可以直接練習該重點的題目。',
     '文法新增「動詞三態」：68 個常用動詞的三態表（依 AAA、ABB、ABC、ABA、規則變化分類），和填過去式、過去分詞的練習。',
     '六年級新增文法選擇題 35 題、寫作 11 句（助動詞、動詞三態）。',
