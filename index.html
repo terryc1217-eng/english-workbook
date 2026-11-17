@@ -140,6 +140,23 @@ textarea{resize:vertical}
   background-image:linear-gradient(to bottom,transparent 20px,var(--line) 20px,var(--line) 21px,transparent 21px,transparent 44px,var(--line) 44px,var(--line) 45px,transparent 45px,transparent 68px,var(--bad) 68px,var(--bad) 69px,transparent 69px,transparent 92px,var(--line) 92px,var(--line) 93px,transparent 93px);
   background-size:100% 112px}
 
+/* grammar lessons and verb table */
+.lesson .points{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gtable{border-collapse:collapse;min-width:100%;font-size:17px}
+.gtable th,.gtable td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:middle}
+.gtable th{font-size:14px;color:var(--muted);font-weight:700;background:var(--accent-soft)}
+.vtable td.vb{font-weight:700;white-space:nowrap}
+.vtable td.pp{color:var(--muted)}
+.exlist{display:flex;flex-direction:column;gap:10px}
+.exrow{display:flex;gap:12px;align-items:flex-start}
+.exrow .en-line{font-size:20px;font-weight:600}
+.vfield{display:flex;flex-direction:column;gap:4px}
+.vfield .lab{font-size:14px;font-weight:700;color:var(--muted)}
+input.ok{border-color:var(--good);background:var(--good-bg)}
+input.no{border-color:var(--bad);background:var(--bad-bg)}
+.pill.warn{background:var(--bad-bg);color:var(--bad);margin-left:8px;font-size:12px}
+.notice-s{background:var(--bad-bg);border-radius:10px;padding:8px 12px}
 /* gept */
 .pic{font-size:64px;line-height:1.2;text-align:center;font-family:var(--display)}
 .tag{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.04em}
@@ -236,7 +253,7 @@ var S={
     ['word','英文單字',1],['zh','中文意思',1],['ex','例句'],['exZh','例句中文'],['unit','單元'],['emoji','圖示（表情符號，可不填）'],['src','教材（例如：翰林、何嘉仁、自編）']]},
   listen:{label:'聽力',en:'LISTENING',desc:'聽句子或對話，選出答案',f:[
     ['audio','播放內容（英文；對話分行寫，開頭加 G: 女孩、B: 男孩、W: 女士、M: 男士）',1,'area'],['q','題目',1],['a','選項 A',1],['b','選項 B',1],['c','選項 C'],['d','選項 D'],['ans','正確答案',1,'ans'],['note','中文說明'],['unit','單元'],['src','教材']]},
-  grammar:{label:'文法',en:'GRAMMAR',desc:'選擇題，答完可以看解釋',f:[
+  grammar:{label:'文法',en:'GRAMMAR',desc:'文法重點、選擇題'+'、動詞三態',f:[
     ['q','題目（空格用 ___）',1],['a','選項 A',1],['b','選項 B',1],['c','選項 C'],['d','選項 D'],['ans','正確答案',1,'ans'],['note','解釋'],['unit','單元'],['src','教材']]},
   write:{label:'寫作',en:'WRITING',desc:'重組句子，或自己寫出整句',f:[
     ['zh','中文句子',1],['en','英文答案（可接受的答案用 / 分開）',1],['note','提示'],['unit','單元'],['src','教材']]}
@@ -730,7 +747,54 @@ What time ___ she go to bed?|do|does|is|are|B|主詞 she 是第三人稱單數�
 She ___ up at six.|get|gets|getting|to get|B|主詞 She 是第三人稱單數，get 要加 s。|U4 作息|H
 We ___ lunch at twelve.|have|has|having|to have|A|主詞 We 是複數，動詞用 have。|U4 作息|H
 He takes ___ shower at eight.|a|an|some|many|A|洗澡的說法是 take a shower。|U4 作息|H
-She does ___ homework at five thirty.|his|her|my|your|B|she 的所有格是 her。|U4 作息|H`;
+She does ___ homework at five thirty.|his|her|my|your|B|she 的所有格是 her。|U4 作息|H
+I ___ swim very well.|can|cans|am|do|A|can 後面接原形；不管主詞是誰，can 都不變。|助動詞 can|G
+She can ___ the piano.|plays|play|playing|played|B|助動詞 can 後面接原形動詞。|助動詞 can|G
+___ you ride a bike? Yes, I can.|Do|Are|Can|Is|C|問「會不會」用 Can，回答也用 can。|助動詞 can|G
+Can he speak English? No, he ___.|can|can't|doesn't|isn't|B|用 Can 問，否定回答用 can't。|助動詞 can|G
+My brother ___ cook. He is only three.|can|can't|is|does|B|三歲還不會煮飯，用 can't（不會）。|助動詞 can|G
+___ I use your eraser? Sure.|Can|Am|Do|Was|A|請求允許可以用 Can I ...?|助動詞 can|G
+I ___ visit my grandma tomorrow.|will|am|did|was|A|tomorrow 是未來，用 will。|助動詞 will|G
+It will ___ rainy tomorrow.|is|be|are|was|B|will 後面接原形，be 動詞的原形是 be。|助動詞 will|G
+___ you go to the party next Sunday?|Will|Did|Are|Were|A|next Sunday 是未來，問句用 Will。|助動詞 will|G
+Will they come? No, they ___.|willn't|won't|don't|aren't|B|will not 的縮寫是 won't。|助動詞 will|G
+We ___ going to have a test on Friday.|is|are|will|be|B|be going to：主詞 We 用 are。|助動詞 will|G
+She is going to ___ a cake.|make|makes|made|making|A|be going to 後面接原形動詞。|助動詞 will|G
+You ___ brush your teeth every day.|should|shouldn't|may|can't|A|每天刷牙是應該做的事，用 should。|助動詞 should / must / may|G
+You look tired. You should ___ to bed early.|go|goes|went|going|A|should 後面接原形動詞。|助動詞 should / must / may|G
+You ___ run in the classroom. It's dangerous.|must|mustn't|should|can|B|mustn't 表示禁止、不可以。|助動詞 should / must / may|G
+Students ___ wear a uniform at our school.|must|mustn't|may|don't|A|學校規定一定要做，用 must（必須）。|助動詞 should / must / may|G
+___ I go to the bathroom? Yes, you may.|May|Must|Should|Do|A|請求允許可以用 May I ...?，比 Can I 更有禮貌。|助動詞 should / must / may|G
+It's cold. You ___ wear a jacket.|should|shouldn't|mustn't|can't|A|天氣冷，應該穿外套。|助動詞 should / must / may|G
+You ___ eat too much candy. It's bad for your teeth.|should|shouldn't|must|may|B|吃太多糖不好，用 shouldn't（不應該）。|助動詞 should / must / may|G
+___ your sister like cats?|Do|Does|Is|Are|B|主詞 your sister 是第三人稱單數，用 Does。|助動詞 do / does / did|G
+He doesn't ___ milk.|drink|drinks|drank|drinking|A|doesn't 後面接原形動詞。|助動詞 do / does / did|G
+___ you go to school yesterday?|Do|Does|Did|Were|C|yesterday 是過去，問句用 Did。|助動詞 do / does / did|G
+Did she ___ her homework?|do|does|did|doing|A|Did 後面接原形動詞。|助動詞 do / does / did|G
+I ___ watch TV last night.|don't|doesn't|didn't|wasn't|C|last night 是過去，否定用 didn't。|助動詞 do / does / did|G
+They ___ play basketball on Mondays.|don't|doesn't|didn't|aren't|A|主詞 They、說每週一的習慣，用 don't。|助動詞 do / does / did|G
+I ___ to the zoo last Sunday.|go|went|gone|goes|B|go 的過去式是 went，gone 是過去分詞。|動詞三態|G
+She ___ a new bag yesterday.|buy|buyed|bought|buys|C|buy 的過去式是 bought（不規則）。|動詞三態|G
+We ___ a movie last night.|see|saw|seen|sees|B|see 的過去式是 saw，seen 是過去分詞。|動詞三態|G
+He ___ his homework this morning.|do|did|done|does|B|do 的過去式是 did，done 是過去分詞。|動詞三態|G
+They ___ fried rice for lunch yesterday.|eat|ate|eaten|eats|B|eat 的過去式是 ate。|動詞三態|G
+I ___ a letter to my friend last week.|write|wrote|written|writes|B|write 的過去式是 wrote。|動詞三態|G
+He ___ his bike to school yesterday.|ride|rode|ridden|rides|B|ride 的過去式是 rode。|動詞三態|G
+The bird ___ away an hour ago.|fly|flew|flown|flies|B|fly 的過去式是 flew；ago 表示過去。|動詞三態|G
+She ___ a book last night.|reads|read|readed|reading|B|read 的過去式拼法一樣是 read，但唸成 red。|動詞三態|G
+I ___ my umbrella at school yesterday.|forget|forgot|forgotten|forgets|B|forget 的過去式是 forgot。|動詞三態|G
+Look! The boy ___ running.|am|is|are|be|B|主詞 The boy 是單數，用 is 加 V-ing。|現在進行式|G
+I am ___ a book now.|read|reads|reading|readed|C|現在進行式是 be 動詞加 V-ing。|現在進行式|G
+She is ___ in the pool.|swim|swiming|swimming|swims|C|swim 要重複字尾 m 再加 ing。|現在進行式|G
+They are ___ pictures.|draw|drawing|draws|drew|B|be 動詞 are 後面接 V-ing。|現在進行式|G
+What are you doing? I'm ___ my homework.|do|does|doing|did|C|問「正在做什麼」，回答也用 V-ing。|現在進行式|G
+He is ___ a letter.|writeing|writing|writting|writes|B|write 去 e 再加 ing。|現在進行式|G
+An elephant is ___ than a dog.|big|bigger|biggest|more big|B|big 要重複字尾 g 再加 er。|比較級|G
+This box is ___ than that one.|heavy|heavyer|heavier|more heavy|C|heavy 去 y 加 ier。|比較級|G
+My score is ___ than yours.|good|gooder|better|best|C|good 的比較級是 better（不規則）。|比較級|G
+Summer is ___ than winter in Taiwan.|hot|hotter|hoter|more hot|B|hot 要重複字尾 t 再加 er。|比較級|G
+Who is taller, Amy ___ Ben?|and|or|than|but|B|問兩個之中哪一個，用 A or B。|比較級|G
+This story is ___ than that one.|interesting|interestinger|more interesting|most interesting|C|長的形容詞前面加 more。|比較級|G`;
 D.g6.write=`
 我的房間號碼是 305。|My room number is 305.|My room number is ...|Starter 生活數字|H
 你來自哪裡？|Where are you from?|Where ...|U1 國家|H
@@ -771,9 +835,20 @@ Tom 比 Ben 高。|Tom is taller than Ben.|比較級加 than|比較級|X
 我週末去慢跑。|I go jogging on weekends. / I go jogging on the weekend.|go jogging|U3 週末活動|H
 她幾點上床睡覺？|What time does she go to bed?|主詞是 she，問句用 does|U4 作息|H
 我十二點吃午餐。|I have lunch at twelve. / I have lunch at 12. / I have lunch at 12:00.|幾點前面用 at|U4 作息|H
-她八點洗澡。|She takes a shower at eight. / She takes a shower at 8. / She takes a shower at 8:00.|take 要加 s|U4 作息|H`;
+她八點洗澡。|She takes a shower at eight. / She takes a shower at 8. / She takes a shower at 8:00.|take 要加 s|U4 作息|H
+我會游泳。|I can swim.|can 加原形|助動詞 can|G
+你會彈鋼琴嗎？|Can you play the piano?|Can you ...|助動詞 can|G
+明天會下雨。|It will rain tomorrow. / It will be rainy tomorrow. / It's going to rain tomorrow. / It is going to rain tomorrow.|will 加原形|助動詞 will|G
+我們這個週末要去游泳。|We are going to go swimming this weekend. / We're going to go swimming this weekend. / We will go swimming this weekend.|be going to 加原形|助動詞 will|G
+你應該早點睡覺。|You should go to bed early. / You should sleep early.|should 加原形|助動詞 should / must / may|G
+你不可以在教室裡跑步。|You mustn't run in the classroom. / You must not run in the classroom. / You can't run in the classroom. / You cannot run in the classroom. / Don't run in the classroom.|mustn't 表示禁止|助動詞 should / must / may|G
+我可以去洗手間嗎？|May I go to the bathroom? / Can I go to the bathroom?|May I ...|助動詞 should / must / may|G
+她不喝牛奶。|She doesn't drink milk. / She does not drink milk.|doesn't 加原形|助動詞 do / does / did|G
+她昨天沒有寫功課。|She didn't do her homework yesterday. / She did not do her homework yesterday.|didn't 加原形|助動詞 do / does / did|G
+我上星期日去了動物園。|I went to the zoo last Sunday.|go 的過去式是 went|動詞三態|G
+他昨天買了一本書。|He bought a book yesterday.|buy 的過去式是 bought|動詞三態|G`;
 
-var SRC_NAME={ g3:{H:'翰林 Here We Go 1', X:'延伸主題', K:'小學英檢主題字'}, g6:{H:'翰林 Here We Go 7', X:'延伸主題', K:'小學英檢主題字'} };
+var SRC_NAME={ g3:{H:'翰林 Here We Go 1', X:'延伸主題', K:'小學英檢主題字', G:'文法加強'}, g6:{H:'翰林 Here We Go 7', X:'延伸主題', K:'小學英檢主題字', G:'文法加強'} };
 
 /* ---------- GEPT Kids style practice bank (written for this workbook; not official test items) ---------- */
 /* pictures are emoji or short text such as 6:30; listening lines may start with G: B: W: M: */
@@ -997,6 +1072,164 @@ var GEPT_SHAPE={
   g6:{l1:5,l2:6,l3:7,l4:7, r1:20,cloze:5,read:5, w4:6,w5:4, lmin:20, rmin:25, full:true}
 };
 
+/* ---------- grammar lessons (文法重點) and verb forms (動詞三態) ---------- */
+/* each lesson: units = grammar units its practice button draws from; ex = [English, 中文] (each example has a recording) */
+var LESSONS={
+g3:[
+ {id:'g3l1', title:'be 動詞：am、is、are', units:['be 動詞','U1 名字'],
+  sum:'be 動詞的意思是「是」。主詞不同，be 動詞也不同。',
+  points:['I 一定配 am。','you、we、they 和兩個以上的人或東西配 are。','he、she、it 和一個人或一個東西配 is。','常用縮寫：I am → I\'m、you are → you\'re、it is → it\'s、what is → what\'s。'],
+  table:[['主詞','be 動詞','例子'],['I','am','I am Amy.'],['you / we / they','are','You are my friend.'],['he / she / it','is','She is my sister.']],
+  ex:[['I am a student.','我是學生。'],['You are my friend.','你是我的朋友。'],['He is my brother.','他是我的哥哥。'],['They are my classmates.','他們是我的同學。']]},
+ {id:'g3l2', title:'a 和 an', units:['U3 文具'],
+  sum:'說「一個」東西時，名詞前面要加 a 或 an。',
+  points:['看名詞第一個字母的「發音」：母音（a、e、i、o、u 的音）開頭用 an，其他用 a。','只說顏色時不用 a：It\'s red.；顏色加東西時要用：It\'s a red pen.','a 或 an 要看緊接在後面的那個字：an orange、a red orange。'],
+  table:[['a','an'],['a book','an apple'],['a pen','an eraser'],['a ruler','an egg'],['a yellow pencil','an orange pencil']],
+  ex:[['It\'s a book.','它是一本書。'],['It\'s an eraser.','它是一個橡皮擦。'],['It\'s an orange.','它是一個柳丁。'],['It\'s a red apple.','它是一顆紅蘋果。']]},
+ {id:'g3l3', title:'一個和很多個（複數）', units:['複數','Starter 打招呼與數字'],
+  sum:'兩個以上的東西，名詞後面通常要加 s。',
+  points:['一個：a book、one pen。','兩個以上：two books、three pens。','數字後面已經說了數量，就不再加 a。'],
+  table:[['一個','兩個以上'],['a book','two books'],['a pencil','three pencils'],['a cat','four cats'],['an apple','five apples']],
+  ex:[['I have one pen.','我有一枝原子筆。'],['I have two pens.','我有兩枝原子筆。'],['I see three birds.','我看到三隻鳥。'],['I like apples.','我喜歡蘋果。']]},
+ {id:'g3l4', title:'問句和回答', units:['疑問詞','回答問句','U2 年齡','U4 顏色'],
+  sum:'用不同的疑問詞問不同的事情，回答要對準問的東西。',
+  points:['What 問「什麼」：What\'s this? It\'s a pen.','Who 問「誰」：Who is he? He is my father.','How old 問「幾歲」：How old are you? I\'m nine.','What color 問「顏色」：What color is it? It\'s blue.','用 Is it…? 問，回答 Yes, it is. 或 No, it isn\'t.'],
+  table:[['問什麼','問句','回答'],['東西','What\'s this?','It\'s a ruler.'],['人','Who is she?','She is my mother.'],['年紀','How old are you?','I\'m eight.'],['顏色','What color is it?','It\'s green.']],
+  ex:[['What\'s this?','這是什麼？'],['Who is he?','他是誰？'],['How old are you?','你幾歲？'],['What color is it?','它是什麼顏色？']]}
+],
+g6:[
+ {id:'g6l1', title:'be 動詞：現在和過去', units:['U1 國家','Starter 生活數字','There is / are'],
+  sum:'be 動詞是「是、在」。要看主詞和時間（現在或過去）來選。',
+  points:['現在：I am、he / she / it is、you / we / they are。','過去：I / he / she / it was、you / we / they were。','否定在 be 動詞後面加 not：isn\'t、aren\'t、wasn\'t、weren\'t。','問句把 be 動詞移到最前面：Is she from Japan?'],
+  table:[['主詞','現在','過去'],['I','am','was'],['he / she / it','is','was'],['you / we / they','are','were']],
+  ex:[['She is from Japan.','她來自日本。'],['They are in the library.','他們在圖書館。'],['I was at home yesterday.','我昨天在家。'],['We were tired last night.','我們昨晚很累。']]},
+ {id:'g6l2', title:'第三人稱單數：動詞加 s', units:['U2 交通','U3 週末活動','U4 作息'],
+  sum:'說習慣或常常做的事時，主詞是 he、she、it 或一個人，動詞要加 s 或 es。',
+  points:['一般加 s：play → plays、get → gets。','字尾是 s、sh、ch、x、o 加 es：watch → watches、go → goes、do → does。','字尾是子音加 y，去 y 加 ies：study → studies、fly → flies。','have 變成 has。','問句和否定用 does / doesn\'t，後面的動詞回到原形：Does he walk to school?'],
+  table:[['規則','原形','第三人稱單數'],['加 s','play','plays'],['加 es','watch','watches'],['加 es','go','goes'],['去 y 加 ies','study','studies'],['特別','have','has']],
+  ex:[['He goes to school by bus.','他搭公車上學。'],['She watches TV on weekends.','她週末看電視。'],['My brother studies English every day.','我哥哥每天讀英文。'],['Does she get up at six?','她六點起床嗎？']]},
+ {id:'g6l3', title:'現在進行式：正在做', units:['現在進行式'],
+  sum:'說「現在正在做」的事，用 be 動詞加動詞 -ing。',
+  points:['句型：主詞 + am / is / are + V-ing。','一般加 ing：play → playing、read → reading。','字尾是不發音的 e，去 e 加 ing：dance → dancing、ride → riding。','短母音加一個子音結尾，重複字尾再加 ing：run → running、swim → swimming、sit → sitting。','常和 now、look、listen 一起出現。'],
+  table:[['規則','原形','V-ing'],['加 ing','play','playing'],['去 e 加 ing','write','writing'],['重複字尾','swim','swimming'],['重複字尾','run','running']],
+  ex:[['I am reading a book now.','我現在正在看書。'],['She is riding a bike.','她正在騎腳踏車。'],['They are swimming in the sea.','他們正在海裡游泳。'],['Look! The dog is running.','你看！那隻狗正在跑。']]},
+ {id:'g6l4', title:'過去式：已經發生的事', units:['過去式','動詞三態'],
+  sum:'說過去發生的事，動詞要用過去式。常和 yesterday、last、ago 一起出現。',
+  points:['規則動詞加 ed：play → played、watch → watched。','字尾是 e 只加 d：like → liked、dance → danced。','子音加 y，去 y 加 ied：study → studied、cry → cried。','短母音加一個子音結尾，重複字尾再加 ed：stop → stopped、shop → shopped。','很多常用動詞不規則，要個別記：go → went、eat → ate（看「動詞三態」）。','問句和否定用 did / didn\'t，後面的動詞回到原形：Did you go? I didn\'t go.'],
+  table:[['時間說法','意思'],['yesterday','昨天'],['last night / last week','昨晚／上星期'],['two days ago','兩天前'],['this morning','今天早上（已經過去時）']],
+  ex:[['I played basketball yesterday.','我昨天打了籃球。'],['She studied English last night.','她昨晚讀了英文。'],['We went to the zoo last Sunday.','我們上星期日去了動物園。'],['Did you eat breakfast this morning?','你今天早上吃早餐了嗎？']]},
+ {id:'g6l5', title:'動詞三態：原形、過去式、過去分詞', units:['動詞三態'], verbs:true,
+  sum:'每個動詞有三種形態：原形、過去式、過去分詞。國小先把過去式記熟，過去分詞國中會用到。',
+  points:['原形：用在現在式、助動詞和 to 後面，例如 I can go.','過去式：說過去的事，例如 I went home.','過去分詞：國中的現在完成式（I have gone）和被動語態（It was made）會用到。','不規則動詞可以分成四種類型一起記：AAA、ABB、ABC、ABA。'],
+  table:[['類型','說明','例子'],['AAA','三態都一樣','put – put – put'],['ABB','過去式和過去分詞一樣','buy – bought – bought'],['ABC','三態都不一樣','go – went – gone'],['ABA','原形和過去分詞一樣','come – came – come'],['規則','過去式和過去分詞都加 ed','play – played – played']],
+  ex:[['I went to the park yesterday.','我昨天去了公園。'],['She bought a new bag.','她買了一個新包包。'],['We ate dinner at seven.','我們七點吃晚餐。'],['He wrote a letter to his friend.','他寫了一封信給他的朋友。']]},
+ {id:'g6l6', title:'助動詞 can：會、能、可以', units:['助動詞 can'],
+  sum:'can 表示「會、能夠、可以」。助動詞後面一定接原形動詞。',
+  points:['句型：主詞 + can + 原形動詞。不管主詞是誰，can 都不變，也不加 s。','否定：can\'t（cannot）+ 原形。','問句：Can + 主詞 + 原形…？回答 Yes, I can. / No, I can\'t.','Can I…? 可以用來請求別人允許。','could 是 can 的過去式，也可以用來有禮貌地請求：Could you help me?'],
+  table:[['','句子'],['肯定','She can swim.'],['否定','She can\'t swim.'],['問句','Can she swim?'],['回答','Yes, she can. / No, she can\'t.']],
+  ex:[['I can swim.','我會游泳。'],['My sister can\'t ride a bike.','我妹妹不會騎腳踏車。'],['Can you play the piano?','你會彈鋼琴嗎？'],['Can I use your pencil?','我可以用你的鉛筆嗎？']]},
+ {id:'g6l7', title:'助動詞 will 和 be going to：未來', units:['助動詞 will','未來式'],
+  sum:'說未來會發生或打算做的事，可以用 will 或 be going to，後面都接原形動詞。',
+  points:['will + 原形：表示「將會」，也用在當下決定的事。','will not 縮寫成 won\'t。','be going to + 原形：表示已經計畫好、打算要做的事。','常和 tomorrow、next week、this weekend 一起出現。'],
+  table:[['','will','be going to'],['肯定','I will visit Grandma.','I am going to visit Grandma.'],['否定','I won\'t go.','I am not going to go.'],['問句','Will you come?','Are you going to come?']],
+  ex:[['It will rain tomorrow.','明天會下雨。'],['I won\'t be late.','我不會遲到。'],['We are going to have a picnic this weekend.','我們這個週末要去野餐。'],['Will you come to my party?','你會來我的派對嗎？']]},
+ {id:'g6l8', title:'助動詞 should、must、may', units:['助動詞 should / must / may'],
+  sum:'這三個助動詞都接原形動詞，用來表示建議、規定和允許。',
+  points:['should：應該（建議）。shouldn\'t：不應該。','must：必須（規定、一定要做）。mustn\'t：禁止、絕對不可以。','may：可以（請求允許，比 can 更有禮貌），也可以表示「可能」。','回答 May I…? 可以說 Yes, you may. / Sure.'],
+  table:[['助動詞','意思','例子'],['should','應該','You should drink water.'],['shouldn\'t','不應該','You shouldn\'t eat too much candy.'],['must','必須','You must wear a helmet.'],['mustn\'t','不可以（禁止）','You mustn\'t run here.'],['may','可以','May I come in?']],
+  ex:[['You should go to bed early.','你應該早點睡覺。'],['You must wear a helmet.','你必須戴安全帽。'],['You mustn\'t run in the classroom.','你不可以在教室裡跑步。'],['May I come in?','我可以進來嗎？']]},
+ {id:'g6l9', title:'助動詞 do、does、did：問句和否定', units:['助動詞 do / does / did'],
+  sum:'一般動詞的句子要變成問句或否定句時，要借用 do、does、did，後面的動詞回到原形。',
+  points:['現在：I / you / we / they 用 do、don\'t。','現在：he / she / it 用 does、doesn\'t（動詞不再加 s）。','過去：所有主詞都用 did、didn\'t（動詞不再用過去式）。','回答：Yes, I do. / No, she doesn\'t. / Yes, they did.'],
+  table:[['時間','問句','否定'],['現在（I / you）','Do you like milk?','I don\'t like milk.'],['現在（he / she）','Does he like milk?','He doesn\'t like milk.'],['過去','Did you go there?','I didn\'t go there.']],
+  ex:[['Do you like dogs?','你喜歡狗嗎？'],['She doesn\'t eat meat.','她不吃肉。'],['Did they play baseball yesterday?','他們昨天打棒球了嗎？'],['I didn\'t watch TV last night.','我昨晚沒有看電視。']]},
+ {id:'g6l10', title:'比較級：比較兩個人或東西', units:['比較級'],
+  sum:'比較兩個人或東西時，形容詞用比較級，後面接 than。',
+  points:['短的形容詞加 er：tall → taller、fast → faster。','字尾是 e 只加 r：nice → nicer。','子音加 y，去 y 加 ier：heavy → heavier、happy → happier。','短母音加一個子音結尾，重複字尾：big → bigger、hot → hotter。','長的形容詞前面加 more：expensive → more expensive。','不規則：good → better、bad → worse。'],
+  table:[['規則','原級','比較級'],['加 er','tall','taller'],['去 y 加 ier','heavy','heavier'],['重複字尾','big','bigger'],['加 more','beautiful','more beautiful'],['不規則','good','better']],
+  ex:[['Tom is taller than Ben.','Tom 比 Ben 高。'],['An elephant is bigger than a dog.','大象比狗大。'],['This book is more interesting than that one.','這本書比那本有趣。'],['My English is better than before.','我的英文比以前好。']]}
+]};
+
+/* verb forms: base|past|past participle|中文|type|recording text (optional) */
+var VERBS={ g6:`
+put|put|put|放|AAA
+cut|cut|cut|切、剪|AAA
+hit|hit|hit|打、撞|AAA
+let|let|let|讓|AAA
+cost|cost|cost|花費（錢）|AAA
+hurt|hurt|hurt|受傷、疼痛|AAA
+read|read|read|讀（過去式和過去分詞唸 red）|AAA|read, red, red
+have|had|had|有、吃|ABB
+make|made|made|做|ABB
+buy|bought|bought|買|ABB
+bring|brought|brought|帶來|ABB
+think|thought|thought|想|ABB
+teach|taught|taught|教|ABB
+catch|caught|caught|抓、趕上|ABB
+sleep|slept|slept|睡覺|ABB
+feel|felt|felt|感覺|ABB
+meet|met|met|遇見|ABB
+leave|left|left|離開|ABB
+sit|sat|sat|坐|ABB
+stand|stood|stood|站|ABB
+tell|told|told|告訴|ABB
+say|said|said|說|ABB
+find|found|found|找到|ABB
+lose|lost|lost|遺失、輸|ABB
+win|won|won|贏|ABB
+spend|spent|spent|花費（時間、錢）|ABB
+send|sent|sent|寄、送|ABB
+build|built|built|建造|ABB
+pay|paid|paid|付錢|ABB
+hear|heard|heard|聽到|ABB
+get|got|got/gotten|得到|ABB|get, got, got, gotten
+be|was/were|been|是|ABC|be, was, were, been
+do|did|done|做|ABC
+go|went|gone|去|ABC
+eat|ate|eaten|吃|ABC
+drink|drank|drunk|喝|ABC
+see|saw|seen|看見|ABC
+give|gave|given|給|ABC
+take|took|taken|拿、搭乘|ABC
+sing|sang|sung|唱歌|ABC
+swim|swam|swum|游泳|ABC
+write|wrote|written|寫|ABC
+ride|rode|ridden|騎|ABC
+drive|drove|driven|開車|ABC
+speak|spoke|spoken|說（語言）|ABC
+fly|flew|flown|飛|ABC
+draw|drew|drawn|畫|ABC
+know|knew|known|知道|ABC
+grow|grew|grown|成長、種植|ABC
+wear|wore|worn|穿、戴|ABC
+begin|began|begun|開始|ABC
+break|broke|broken|打破|ABC
+forget|forgot|forgotten|忘記|ABC
+come|came|come|來|ABA
+run|ran|run|跑|ABA
+become|became|become|變成|ABA
+play|played|played|玩、打（球）|規則
+watch|watched|watched|看|規則
+visit|visited|visited|拜訪|規則
+clean|cleaned|cleaned|打掃|規則
+like|liked|liked|喜歡（字尾 e 只加 d）|規則
+dance|danced|danced|跳舞（字尾 e 只加 d）|規則
+live|lived|lived|住（字尾 e 只加 d）|規則
+study|studied|studied|讀書（子音加 y，去 y 加 ied）|規則
+cry|cried|cried|哭（子音加 y，去 y 加 ied）|規則
+stop|stopped|stopped|停止（重複字尾再加 ed）|規則
+shop|shopped|shopped|購物（重複字尾再加 ed）|規則
+plan|planned|planned|計畫（重複字尾再加 ed）|規則`};
+var VTYPE={AAA:'AAA 型：三態都一樣', ABB:'ABB 型：過去式和過去分詞一樣', ABC:'ABC 型：三態都不一樣', ABA:'ABA 型：原形和過去分詞一樣', '規則':'規則變化：加 ed'};
+function verbList(g){
+  if(!VERBS[g]) return [];
+  return VERBS[g].split('\n').map(function(l){ return l.trim(); }).filter(Boolean).map(function(l){
+    var f=l.split('|');
+    return {id:g+'vb_'+f[0].replace(/\W/g,''), base:f[0], past:f[1], pp:f[2], zh:f[3], type:f[4],
+      audio:f[5]||[f[0],f[1],f[2]].join(', ').replace(/\//g,', ')};
+  });
+}
+
 var DEFAULTS={g3:{},g6:{}};
 ['g3','g6'].forEach(function(g){ KINDS.forEach(function(k){
   DEFAULTS[g][k]=parseBulk(k, D[g][k]).items.map(function(it,i){ it.id=g+k.charAt(0)+'2_'+i; it.src=SRC_NAME[g][it.src]||it.src; return it; });
@@ -1004,22 +1237,50 @@ var DEFAULTS={g3:{},g6:{}};
 
 /* ---------- state ---------- */
 var grade = lsGet('ek.grade')==='g6' ? 'g6' : 'g3';
-var cloud={}, local=lsJSON('ek.custom')||{};
+var cloud={}, local=(function(raw){
+  var out={}; if(!raw) return out;
+  Object.keys(raw).forEach(function(key){
+    var m=/^(g3|g6)-(vocab|listen|grammar|write)$/.exec(key); if(!m) return;
+    var ov=toOverlay(m[2], raw[key], m[1]); if(ov) out[key]=ov;
+  });
+  return out;
+})(lsJSON('ek.custom'));
 var db=null, dbState='loading';
 var prog=cleanProg(lsJSON('ek.prog'));
 var ui={unit:{}, src:'', vocabMode:'card', writeMode:null, manageKind:'vocab', editId:null};
-var VERSION='v0.2_202611171536';
+var VERSION='v0.2_202611171759';
 var EDITION='web', WEB_URL='https://terryc1217-eng.github.io/english-workbook/', IS_WEB=(EDITION==='web');
 var view='home';
 
-function getItemsFor(g, kind){
-  var key=g+'-'+kind;
-  if(cloud[key]) return cloud[key];
-  if(local[key]) return sanitizeList(kind, local[key]);
-  return DEFAULTS[g][kind];
+/* custom materials are stored as changes on top of the built-in set (added or edited items, hidden built-in ids),
+   so built-in items added in later versions still appear after the user has customised a category */
+function sameItem(kind,a,b){ return S[kind].f.every(function(f){ return (a[f[0]]||'')===(b[f[0]]||''); }); }
+function diffSet(kind, full, g){
+  var defs=DEFAULTS[g][kind], dmap={}, seen={}, items=[];
+  defs.forEach(function(d){ dmap[d.id]=d; });
+  full.forEach(function(it){ seen[it.id]=1; var d=dmap[it.id]; if(!d || !sameItem(kind,it,d)) items.push(it); });
+  return {v:2, items:items, hidden:defs.filter(function(d){ return !seen[d.id]; }).map(function(d){ return d.id; })};
 }
+function toOverlay(kind, raw, g){
+  if(raw && raw.v===2) return {v:2, items:sanitizeList(kind,raw.items), hidden:(Array.isArray(raw.hidden)?raw.hidden:[]).filter(function(x){ return typeof x==='string'; }).slice(0,3000)};
+  var full=Array.isArray(raw) ? raw : (raw && Array.isArray(raw.items) ? raw.items : null);
+  if(!full) return null;
+  /* old format (whole list): built-in items missing from it may simply not have existed yet, so nothing is hidden */
+  var ov=diffSet(kind, sanitizeList(kind,full), g); ov.hidden=[]; return ov;
+}
+function applyOverlay(kind, g, ov){
+  var defs=DEFAULTS[g][kind]; if(!ov) return defs;
+  var edit={}, hide={}, dset={}, out=[];
+  ov.items.forEach(function(it){ edit[it.id]=it; });
+  ov.hidden.forEach(function(id){ hide[id]=1; });
+  defs.forEach(function(d){ dset[d.id]=1; if(!hide[d.id]) out.push(edit[d.id]||d); });
+  ov.items.forEach(function(it){ if(!dset[it.id]) out.push(it); });
+  return out;
+}
+function overlayFor(g, kind){ var key=g+'-'+kind; return cloud[key] || local[key] || null; }
+function getItemsFor(g, kind){ return applyOverlay(kind, g, overlayFor(g,kind)); }
 function getItems(kind){ return getItemsFor(grade, kind); }
-function isCustom(kind){ var key=grade+'-'+kind; return !!(cloud[key]||local[key]); }
+function isCustom(kind){ var ov=overlayFor(grade,kind); return !!(ov && (ov.items.length||ov.hidden.length)); }
 function markDone(kind,id){
   prog[grade]=prog[grade]||{}; prog[grade][kind]=prog[grade][kind]||{};
   if(!prog[grade][kind][id]){ prog[grade][kind][id]=1; lsSet('ek.prog',JSON.stringify(prog)); queueProg(); }
@@ -1053,7 +1314,7 @@ function initCaps(){
       var next={};
       snap.docs.forEach(function(doc){
         var m=/^(g3|g6)-(vocab|listen|grammar|write)$/.exec(doc.id), b=doc.data();
-        if(m && b && Array.isArray(b.items)) next[doc.id]=sanitizeList(m[2], b.items);
+        if(m && b && Array.isArray(b.items)){ var ov=toOverlay(m[2], b, m[1]); if(ov) next[doc.id]=ov; }
       });
       cloud=next;
       if(!snap.metadata || !snap.metadata.fromCache) clearTimeout(timer);
@@ -1080,11 +1341,12 @@ function initCaps(){
 var chains={};
 function saveLocal(key, data){ local[key]=data; lsSet('ek.custom', JSON.stringify(local)); }
 function saveSet(kind, arr, g){
-  var key=(g||grade)+'-'+kind, data=JSON.parse(JSON.stringify(arr));
+  g=g||grade;
+  var key=g+'-'+kind, data=diffSet(kind, sanitizeList(kind, JSON.parse(JSON.stringify(arr))), g);
   if(!db){ saveLocal(key,data); return Promise.resolve(true); }
   cloud[key]=data;
   var p=(chains[key]||Promise.resolve()).then(function(){
-    return db.doc('sets/'+key).set({items:data, updatedAt:Date.now()});
+    return db.doc('sets/'+key).set({v:2, items:data.items, hidden:data.hidden, updatedAt:Date.now()});
   }).then(function(){ return true; }, function(){
     saveLocal(key,data); toast('雲端存不進去，先存在這台裝置'); return false;
   });
@@ -1199,11 +1461,22 @@ function loadClips(g){
   if(clipState[g]) return;
   clipState[g]='loading';
   fetch('audio-'+g+'.json').then(function(r){ if(!r.ok) throw new Error('http '+r.status); return r.json(); })
-    .then(function(j){ clips[g]=j; clipState[g]='ready'; setDiag(lastSpeech); })
+    .then(function(j){ clips[g]=j; clipState[g]='ready'; setDiag(lastSpeech); if(view==='manage') renderManageList(); })
     .catch(function(){ clipState[g]='failed'; setDiag(lastSpeech); });
 }
+function clipKey(l){
+  var v = l.sp==='G'?'g' : l.sp==='B'?'b' : l.g==='m'?'m' : 'w', t=l.text.trim(), order=[v,'w','m','g','b'];
+  for(var k=0;k<order.length;k++){ var key=order[k]+'|'+t; if((clips.g3&&typeof clips.g3[key]==='string')||(clips.g6&&typeof clips.g6[key]==='string')) return key; }
+  return null;
+}
+function clipsReady(){ return clipState.g3==='ready' || clipState.g6==='ready'; }
+function needsRecording(kind, it){
+  var texts = kind==='vocab' ? [it.word].concat(it.ex?[it.ex]:[]) : kind==='listen' ? [it.audio] : kind==='write' ? [it.en.split(' / ')[0]] : [];
+  return texts.some(function(t){ return parseLines(t).some(function(l){ return !clipKey(l); }); });
+}
 function clipFor(l){
-  var v = l.sp==='G'?'g' : l.sp==='B'?'b' : l.g==='m'?'m' : 'w', key=v+'|'+l.text.trim(), gs=[grade, grade==='g3'?'g6':'g3'];
+  var key=clipKey(l), gs=[grade, grade==='g3'?'g6':'g3'];
+  if(!key) return null;
   for(var i=0;i<2;i++){
     var c=clips[gs[i]];
     if(c && typeof c[key]==='string'){
@@ -1848,16 +2121,141 @@ function viewListen(root){
 }
 
 function viewGrammar(root){
-  filterBars('grammar').forEach(function(n){ root.append(n); });
+  var modes=[['quiz','選擇題'],['lesson','文法重點']];
+  if(VERBS[grade]) modes.push(['verbs','動詞三態']);
+  var mode=ui.gMode||'quiz'; if(mode==='verbs' && !VERBS[grade]) mode='quiz';
+  root.append(h('div',{class:'seg',role:'group','aria-label':'文法練習方式'}, modes.map(function(m){
+    return h('button',{type:'button','aria-pressed':String(mode===m[0]),onclick:function(){ ui.gMode=m[0]; if(m[0]!=='quiz') ui.lessonUnits=null; render(); }},m[1]);
+  })));
+  if(mode==='lesson') return viewLessons(root);
+  if(mode==='verbs') return viewVerbs(root);
+  var pool;
+  if(ui.lessonUnits){
+    pool=getItems('grammar').filter(function(it){ return ui.lessonUnits.indexOf(it.unit)>=0; });
+    root.append(h('div',{class:'row between'},
+      h('p',null, h('span',{class:'pill',text:'正在練習：'+ui.lessonTitle})),
+      h('button',{class:'btn sm',type:'button',onclick:function(){ ui.lessonUnits=null; render(); }},'改練全部題目')));
+  } else {
+    filterBars('grammar').forEach(function(n){ root.append(n); });
+    pool=filtered('grammar');
+  }
   var box=h('div',{class:'stack'}); root.append(box);
   runQuiz(box,'grammar',function(){
-    return shuffle(filtered('grammar')).map(function(it){
+    return shuffle(pool).map(function(it){
       var o=optionsOf(it), right=o.opts[o.ans], mixed=o.ans>=0?shuffle(o.opts):o.opts;
       o={opts:mixed, ans:mixed.indexOf(right)};
       return { id:it.id, text:it.q, options:o.opts, answer:o.ans,
         render:function(p){ p.append(h('p',{class:'qtext',lang:'en',text:it.q})); },
         explain: it.note ? function(ex){ ex.append(it.note); } : null };
     }).filter(function(q){ return q.options.length>=2 && q.answer>=0; }).slice(0,10);
+  });
+}
+
+function lessonCount(ls){ return getItems('grammar').filter(function(it){ return ls.units.indexOf(it.unit)>=0; }).length; }
+function viewLessons(root){
+  var list=LESSONS[grade]||[], idx=0;
+  list.forEach(function(ls,i){ if(ls.id===ui.lesson) idx=i; });
+  var ls=list[idx]; if(!ls){ root.append(empty('這個年級還沒有文法重點。')); return; }
+  root.append(h('div',{class:'chips',role:'group','aria-label':'選擇文法重點'}, list.map(function(x,i){
+    return h('button',{class:'chip',type:'button','aria-pressed':String(i===idx),onclick:function(){ ui.lesson=x.id; render(); }},(i+1)+'. '+x.title);
+  })));
+  var n=lessonCount(ls);
+  var table=ls.table ? h('div',{class:'tscroll'}, h('table',{class:'gtable'},
+    h('thead',null, h('tr',null, ls.table[0].map(function(c){ return h('th',{text:c}); }))),
+    h('tbody',null, ls.table.slice(1).map(function(r){ return h('tr',null, r.map(function(c){ return h('td',{lang:/[A-Za-z]/.test(c)&&!/[一-鿿]/.test(c)?'en':null,text:c}); })); })))) : null;
+  root.append(h('article',{class:'card stack lesson'},
+    h('p',{class:'tag',text:'文法重點 '+(idx+1)+' / '+list.length}),
+    h('h2',{text:ls.title}),
+    h('p',{class:'zh',text:ls.sum}),
+    h('ul',{class:'points'}, ls.points.map(function(t){ return h('li',{text:t}); })),
+    table,
+    h('h3',{text:'例句'}),
+    h('div',{class:'exlist'}, ls.ex.map(function(e){
+      return h('div',{class:'exrow'},
+        h('button',{class:'btn sm',type:'button','aria-label':'聽：'+e[0],onclick:function(){ speak(e[0],false); }},'🔊'),
+        h('div',null, h('div',{class:'en-line',lang:'en',text:e[0]}), h('div',{class:'muted small',text:e[1]})));
+    })),
+    h('div',{class:'row'},
+      n ? h('button',{class:'btn primary',type:'button',onclick:function(){ ui.gMode='quiz'; ui.lessonUnits=ls.units; ui.lessonTitle=ls.title; render(); }},'練習這個重點（'+n+' 題）') : null,
+      ls.verbs ? h('button',{class:'btn',type:'button',onclick:function(){ ui.gMode='verbs'; ui.verbMode='table'; render(); }},'打開動詞三態表') : null)));
+  root.append(h('div',{class:'row between'},
+    h('button',{class:'btn',type:'button',disabled:idx===0,onclick:function(){ ui.lesson=list[idx-1].id; render(); try{ window.scrollTo(0,0); }catch(e){} }},'← 上一個重點'),
+    h('button',{class:'btn primary',type:'button',disabled:idx===list.length-1,onclick:function(){ ui.lesson=list[idx+1].id; render(); try{ window.scrollTo(0,0); }catch(e){} }},'下一個重點 →')));
+}
+
+function vAccept(s){ return String(s).split('/').map(function(x){ return x.trim().toLowerCase(); }); }
+function viewVerbs(root){
+  var all=verbList(grade), vm=ui.verbMode||'table', types=['AAA','ABB','ABC','ABA','規則'];
+  root.append(h('div',{class:'seg',role:'group','aria-label':'動詞三態'},
+    [['table','動詞三態表'],['drill','練習']].map(function(m){
+      return h('button',{type:'button','aria-pressed':String(vm===m[0]),onclick:function(){ ui.verbMode=m[0]; render(); }},m[1]);
+    })));
+  var vt=ui.verbType||'';
+  root.append(h('div',{class:'frow'}, h('span',{class:'lab',text:'類型'}),
+    h('div',{class:'chips',role:'group','aria-label':'動詞類型'},
+      [['','全部']].concat(types.map(function(t){ return [t,t]; })).map(function(t){
+        return h('button',{class:'chip',type:'button','aria-pressed':String(vt===t[0]),onclick:function(){ ui.verbType=t[0]; render(); }},t[1]);
+      }))));
+  var list=all.filter(function(v){ return !vt || v.type===vt; });
+  if(vm==='table'){
+    root.append(h('p',{class:'muted small',text:'國小先記熟「過去式」；「過去分詞」到國中的現在完成式和被動語態才會用到，可以先看看。按 🔊 聽三態的唸法。'}));
+    types.filter(function(t){ return !vt || t===vt; }).forEach(function(t){
+      var rows=list.filter(function(v){ return v.type===t; }); if(!rows.length) return;
+      root.append(h('section',{class:'card stack'},
+        h('h3',{text:VTYPE[t]}),
+        h('div',{class:'tscroll'}, h('table',{class:'gtable vtable'},
+          h('thead',null, h('tr',null, ['','原形','過去式','過去分詞','中文'].map(function(c){ return h('th',{text:c}); }))),
+          h('tbody',null, rows.map(function(v){
+            return h('tr',null,
+              h('td',null, h('button',{class:'btn sm',type:'button','aria-label':'聽 '+v.base,onclick:function(){ speak(v.audio,true); }},'🔊')),
+              h('td',{lang:'en',class:'vb',text:v.base}), h('td',{lang:'en',class:'vb',text:v.past}), h('td',{lang:'en',class:'vb pp',text:v.pp}),
+              h('td',{class:'small',text:v.zh}));
+          }))))));
+    });
+    return;
+  }
+  var both = ui.verbForms==='both';
+  root.append(h('div',{class:'frow'}, h('span',{class:'lab',text:'要填'}),
+    h('div',{class:'chips',role:'group','aria-label':'要填哪些形態'},
+      [['past','只填過去式'],['both','過去式和過去分詞']].map(function(o){
+        return h('button',{class:'chip',type:'button','aria-pressed':String((both?'both':'past')===o[0]),onclick:function(){ ui.verbForms=o[0]; render(); }},o[1]);
+      }))));
+  var box=h('div',{class:'stack'}); root.append(box);
+  runQuiz(box,'grammar',function(){
+    return shuffle(list).slice(0,10).map(function(v){
+      var correct=v.base+' – '+v.past+' – '+v.pp;
+      return { id:v.id, text:v.base+'（'+v.zh+'）', correctText:correct,
+        render:function(p){
+          p.append(h('p',{class:'tag',text:'動詞三態　'+VTYPE[v.type].split('：')[0]}),
+            h('div',{class:'row'}, h('span',{class:'word',lang:'en',text:v.base}),
+              h('button',{class:'btn sm',type:'button','aria-label':'聽原形',onclick:function(){ speak(v.base,false); }},'🔊')),
+            h('p',{class:'zh',text:v.zh}));
+        },
+        explain:function(ex){
+          ex.append(h('strong',{lang:'en',text:correct}), '\n'+VTYPE[v.type],
+            h('div',{class:'row'}, h('button',{class:'btn sm',type:'button',onclick:function(){ speak(v.audio,true); }},'🔊 聽三態')));
+        },
+        custom:function(area, submit){
+          function field(id,label){
+            var inp=h('input',{type:'text',id:id,class:'bigin',autocomplete:'off',autocapitalize:'none',autocorrect:'off',spellcheck:'false',lang:'en'});
+            return {inp:inp, el:h('label',{for:id,class:'vfield'}, h('span',{class:'lab',text:label}), inp)};
+          }
+          var fp=field('v-past','過去式'), fq=both?field('v-pp','過去分詞'):null;
+          var btn=h('button',{class:'btn primary',type:'button',onclick:go},'檢查');
+          function mark(f, ok){ f.inp.classList.add(ok?'ok':'no'); f.inp.disabled=true; }
+          function go(){
+            var a=fp.inp.value.trim().toLowerCase(), b=fq?fq.inp.value.trim().toLowerCase():'';
+            if(!a || (fq && !b)){ toast('每一格都要填'); return; }
+            var okA=vAccept(v.past).indexOf(a)>=0, okB=!fq || vAccept(v.pp).indexOf(b)>=0;
+            mark(fp,okA); if(fq) mark(fq,okB); btn.disabled=true;
+            if(okA&&okB) speak(v.audio,false);
+            submit(okA&&okB?1:0);
+          }
+          [fp,fq].forEach(function(f){ if(f) f.inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); go(); } }); });
+          area.append(h('div',{class:'form'}, fp.el, fq?fq.el:null), h('div',{class:'row'},btn));
+          setTimeout(function(){ try{ fp.inp.focus({preventScroll:true}); }catch(e){} },50);
+        } };
+    });
   });
 }
 
@@ -1983,15 +2381,18 @@ function fillForm(kind,it){
 }
 function renderManageList(){
   var host=document.getElementById('manageList'); if(!host) return;
-  var kind=ui.manageKind, list=getItems(kind);
+  var kind=ui.manageKind, list=getItems(kind), rec=clipsReady() && kind!=='grammar';
+  var noRec=rec ? list.filter(function(it){ return needsRecording(kind,it); }).length : 0;
   fill(host, 
     h('div',{class:'row between'},
       h('h3',{text:(grade==='g3'?'三年級':'六年級')+S[kind].label+'　'+list.length+' 筆'}),
-      h('span',{class:'pill',text:isCustom(kind)?'已自訂':'預設素材'})),
+      h('span',{class:'pill',text:isCustom(kind)?'有自己加的素材':'預設素材'})),
+    noRec ? h('p',{class:'small notice-s'}, '有 '+noRec+' 筆還沒有錄音，在 iPad 上可能聽不到發音。'+
+      (IS_WEB ? '建議改在 Claude 版新增素材，再請 Claude 錄音。' : '在對話裡跟 Claude 說「幫我把新素材錄音、併入內建」，就會補上錄音，網站版也會一起更新。')) : null,
     h('div',{class:'items'}, list.length ? list.map(function(it){
       var t=itemTitle(kind,it);
       return h('div',{class:'item'},
-        h('div',{class:'txt'}, h('div',{text:t[0]}), h('div',{class:'sub',text:t[1]+(it.unit?'　·　'+it.unit:'')+(it.src?'　·　'+it.src:'')})),
+        h('div',{class:'txt'}, h('div',null, t[0], rec&&needsRecording(kind,it)?h('span',{class:'pill warn',text:'沒有錄音'}):null), h('div',{class:'sub',text:t[1]+(it.unit?'　·　'+it.unit:'')+(it.src?'　·　'+it.src:'')})),
         h('div',{class:'acts'},
           h('button',{class:'btn sm',type:'button',onclick:function(){
             ui.editId=it.id; fillForm(kind,it);
@@ -2250,6 +2651,11 @@ function initProgSync(d){
 /* ---------- settings: voices, sync, version ---------- */
 var CHANGELOG=[
   [VERSION, [
+    '文法新增「文法重點」：六年級 10 個（含助動詞 can、will、should、must、may、do／does／did，動詞三態），三年級 4 個，都有例句和錄音，可以直接練習該重點的題目。',
+    '文法新增「動詞三態」：68 個常用動詞的三態表（依 AAA、ABB、ABC、ABA、規則變化分類），和填過去式、過去分詞的練習。',
+    '六年級新增文法選擇題 35 題、寫作 11 句（助動詞、動詞三態）。',
+    '自己加的素材改成「疊加」在內建素材上：之後內建題庫更新，也看得到新題目。素材管理會標出還沒有錄音的項目。']],
+  ['v0.2_202611171536', [
     '網站改到新網址 terryc1217-eng.github.io/english-workbook（repository 改名）；Claude 版的連結一併更新。']],
   ['v0.2_202611171530', [
     '網站版放上 GitHub Pages；Claude 版的「設定 → 資料同步」加上網站版的連結。']],
@@ -2364,7 +2770,7 @@ function route(){
 document.querySelectorAll('#gradeSeg button').forEach(function(b){
   b.addEventListener('click',function(){
     if(grade===b.dataset.g) return;
-    grade=b.dataset.g; lsSet('ek.grade',grade); ui.unit={}; ui.src=''; ui.editId=null; ui.writeMode=null; if(ui.gept==='mock') ui.gept='home'; render();
+    grade=b.dataset.g; lsSet('ek.grade',grade); ui.unit={}; ui.src=''; ui.editId=null; ui.writeMode=null; ui.lessonUnits=null; ui.lesson=null; ui.verbType=''; if(ui.gept==='mock') ui.gept='home'; render();
   });
 });
 window.addEventListener('hashchange',route);
