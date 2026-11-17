@@ -1008,8 +1008,8 @@ var cloud={}, local=lsJSON('ek.custom')||{};
 var db=null, dbState='loading';
 var prog=cleanProg(lsJSON('ek.prog'));
 var ui={unit:{}, src:'', vocabMode:'card', writeMode:null, manageKind:'vocab', editId:null};
-var VERSION='v0.2_202611171530';
-var EDITION='web', WEB_URL='https://terryc1217-eng.github.io/englist-workbook/', IS_WEB=(EDITION==='web');
+var VERSION='v0.2_202611171536';
+var EDITION='web', WEB_URL='https://terryc1217-eng.github.io/english-workbook/', IS_WEB=(EDITION==='web');
 var view='home';
 
 function getItemsFor(g, kind){
@@ -2250,6 +2250,8 @@ function initProgSync(d){
 /* ---------- settings: voices, sync, version ---------- */
 var CHANGELOG=[
   [VERSION, [
+    '網站改到新網址 terryc1217-eng.github.io/english-workbook（repository 改名）；Claude 版的連結一併更新。']],
+  ['v0.2_202611171530', [
     '網站版放上 GitHub Pages；Claude 版的「設定 → 資料同步」加上網站版的連結。']],
   ['v0.2_202611171503', [
     '分成兩個版本：Claude 版（家長管理素材、AI 出題）和網站版（孩子用，不需要登入，可以加到主畫面、離線使用）。',
